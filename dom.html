@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM Manipulation</title>
+    </head>
+    <body>
+        <p>Youtube Subscribe Button</p> <br>
+        <button onclick=" this.innerText='Subscribed';">Subscribe</button> <br>
+        <a href="rockpaperscissor.html">Click here</a>
+        <p>Amazon Shipping Calculator</p>
+        <p>Orders under $40=+$5.99 shipping</p>
+        <p>Orders over $40=Free shipping</p>
+        <input onkeydown="enter()" type="text" placeholder="Cost of order"> 
+        <button onclick="calcCost()">Calculate</button> <br>
+        <p id="cost"></p>
+       
+        <script>
+         
+         let cost;
+             function calcCost(){
+           const input= Number(document.querySelector('input').value);
+              if(input<=40){
+                    cost=(Number((input*100))+599)/100;
+                }
+                else{
+                    cost=input;
+                }
+                document.querySelector('#cost').innerText=`$${cost}`;
+             }  
+             function enter(){
+                if(event.key==='Enter'){
+                    calcCost();
+                }
+             }
+        </script>
+    </body>
+</html>
