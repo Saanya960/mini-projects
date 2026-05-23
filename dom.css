@@ -1,0 +1,29 @@
+
+
+.subscribe-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius:5px;
+    cursor: pointer;
+
+}
+.calculate-btn {
+    background-color:green;
+    border:none;
+    cursor:pointer;
+    color:white;
+    padding:10px 20px;
+    border-radius:5px;
+    font-size:16px;
+}
+
+input{
+    padding:10px;
+}
+
+
+body {
+    font-family:Arial
+}; 
