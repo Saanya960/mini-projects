@@ -1,0 +1,39 @@
+body{
+    background-color:lightblue;
+    color:darkblue; 
+    font-family:Arial;
+    text-align:center;
+}
+.game{
+    font-size:30px;
+    font-weight:bold;
+}
+ .rock{
+    cursor:pointer;
+    border:1px solid black;
+    border-radius:50%;
+    mix-blend-mode: multiply;} 
+ .paper{
+    cursor:pointer;
+    height:220px;
+    width:220px;
+    border:1px solid black;
+    border-radius:50%;
+    mix-blend-mode: multiply;
+ }
+ .scissors{
+    cursor:pointer;
+    height:220px;
+    width:220px;
+    border:1px solid black;
+    border-radius:50%;
+    mix-blend-mode: multiply; 
+ }
+ .reset {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius:5px;
+    cursor: pointer;
+ }

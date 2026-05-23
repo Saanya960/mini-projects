@@ -2,30 +2,44 @@
 <html>
     <head>
         <title>DOM Manipulation</title>
+        <link rel="stylesheet" href="dom.css">
     </head>
     <body>
         <p>Youtube Subscribe Button</p> <br>
-        <button onclick=" this.innerText='Subscribed';">Subscribe</button> <br>
+        <button class="subscribe-btn" onclick="isSubscribed()">Subscribe</button> <br>
         <a href="rockpaperscissor.html">Click here</a>
         <p>Amazon Shipping Calculator</p>
         <p>Orders under $40=+$5.99 shipping</p>
         <p>Orders over $40=Free shipping</p>
         <input onkeydown="enter()" type="text" placeholder="Cost of order"> 
-        <button onclick="calcCost()">Calculate</button> <br>
+        <button class="calculate-btn" onclick="calcCost()">Calculate</button> <br>
         <p id="cost"></p>
        
         <script>
+        const subscribeBtn=document.querySelector('.subscribe-btn');
+        function isSubscribed(){
+            if(subscribeBtn.innerText==="Subscribe"){
+                subscribeBtn.innerText="Subscribed";
+                subscribeBtn.style.backgroundColor="gray";
+            } else{
+                subscribeBtn.innerText="Subscribe";
+                subscribeBtn.style.backgroundColor="red";
+            }
+        }
          
          let cost;
              function calcCost(){
            const input= Number(document.querySelector('input').value);
-              if(input<=40){
+            if(input>0 && input<=40){
                     cost=(Number((input*100))+599)/100;
                 }
-                else{
+             else if(input<0 || input===null){
+                cost="ERROR: Invalid input";
+             }
+            else{
                     cost=input;
                 }
-                document.querySelector('#cost').innerText=`$${cost}`;
+                document.querySelector('#cost').innerText=cost;
              }  
              function enter(){
                 if(event.key==='Enter'){

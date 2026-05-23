@@ -2,51 +2,67 @@
 <html>
     <head>
         <title>Rock Paper Scissor Game</title>
-        <!-- <link rel="stylesheet" href="rockpaperscissor.css"> -->
+        <link rel="stylesheet" href="rockpaperscissors.css"> 
     </head>
-    <body>
-        <p>Rock Paper Scissor Game</p>
-       
-        <button 
-        onclick="play('rock')">
-        Rock
-        </button>
-        <button
-        onclick="play('paper')">
-        Paper</button>
-        <button
-        onclick="play('scissor')">
-        Scissors</button>
-        <button onclick="resetScore()">Reset Score</button>
-        <!-- <a href=""></a> -->
+    <body >
+        <p class="game">Rock Paper Scissor Game</p>
+    
+        <img src="rock.jpg" alt="rock" class="rock"
+            onclick="play('rock')">
+            
+        <img src="paper.jpg" alt="paper" class="paper"
+            onclick="play('paper')">
+        <img src="scissors.webp" alt="scissors" class="scissors"
+            onclick="play('scissor')">
+        <p id="result"></p> 
+        <p id="score">Wins:0,Losses:0,Ties:0;</p>
+          <button class="reset" onclick="resetScore()">Reset Score</button> 
          <script>
-            const scores={
-                ties:0,
-                wins:0,
-                losses:0
+            const scores = JSON.parse(localStorage.getItem('score')) || {
+                 ties: Number(scores.ties) || 0,
+                wins: Number(scores.wins) || 0,
+                losses: Number(scores.losses) || 0
+            };
+
+            const moves = ['rock','paper','scissor'];
+
+            function saveScore(){
+                localStorage.setItem('score', JSON.stringify(scores));
             }
-            const moves=['rock','paper','scissor'];
+            function displayScore(){
+                document.querySelector('#score').innerText =`Wins=${scores.wins}, Losses=${scores.losses}, Ties=${scores.ties}`;
+            }
+
             function play(userMove){
-                const randomMove=moves[Math.floor(Math.random()*moves.length)];
-                if(userMove===randomMove){
+                const randomMove = moves[Math.floor(Math.random() * moves.length)];
+                if(userMove === randomMove){
                     scores.ties += 1;
-                    alert(`It is a tie! You both chose ${userMove}. Wins=${scores.wins} Losses=${scores.losses} Ties=${scores.ties}`);
+                    document.querySelector('#result').innerText = `You played ${userMove}. Computer played ${randomMove}. It's a TIE!`;
+                    document.querySelector('body').style.backgroundColor="gray";
+                    
                 } else if((userMove==='rock' && randomMove==='scissor') ||
                           (userMove==='paper' && randomMove==='rock') ||
                           (userMove==='scissor' && randomMove==='paper')){
                     scores.wins += 1;
-                    alert(`You win! ${userMove} beats ${randomMove}. Wins=${scores.wins} Losses=${scores.losses} Ties=${scores.ties}`);
+                    document.querySelector('#result').innerText = `You played ${userMove}. Computer played ${randomMove}. You WIN!`;
+                    document.querySelector('body').style.backgroundColor="lightgreen";
                 } else {
                     scores.losses += 1;
-                    alert(`You lose! ${randomMove} beats ${userMove}. Wins=${scores.wins} Losses=${scores.losses} Ties=${scores.ties}`);
+                    document.querySelector('#result').innerText = `You played ${userMove}. Computer played ${randomMove}. You LOOSE!`;
+                    document.querySelector('body').style.backgroundColor="lightcoral";
                 }
-            }
-            function resetScore(){
-                scores.ties=0,
-                scores.wins=0,
-                scores.losses=0 ;
-            }
+                saveScore();
+                displayScore();
+            };
             
+            function resetScore(){
+                scores.ties = 0;
+                scores.wins = 0;
+                scores.losses = 0;
+                saveScore();
+                displayScore();
+                document.querySelector('body').style.backgroundColor="lightblue";
+            }
          </script>
     </body>
 </html>
