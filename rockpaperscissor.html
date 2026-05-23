@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rock Paper Scissor Game</title>
+        <!-- <link rel="stylesheet" href="rockpaperscissor.css"> -->
+    </head>
+    <body>
+        <p>Rock Paper Scissor Game</p>
+       
+        <button 
+        onclick="play('rock')">
+        Rock
+        </button>
+        <button
+        onclick="play('paper')">
+        Paper</button>
+        <button
+        onclick="play('scissor')">
+        Scissors</button>
+        <button onclick="resetScore()">Reset Score</button>
+        <!-- <a href=""></a> -->
+         <script>
+            const scores={
+                ties:0,
+                wins:0,
+                losses:0
+            }
+            const moves=['rock','paper','scissor'];
+            function play(userMove){
+                const randomMove=moves[Math.floor(Math.random()*moves.length)];
+                if(userMove===randomMove){
+                    scores.ties += 1;
+                    alert(`It is a tie! You both chose ${userMove}. Wins=${scores.wins} Losses=${scores.losses} Ties=${scores.ties}`);
+                } else if((userMove==='rock' && randomMove==='scissor') ||
+                          (userMove==='paper' && randomMove==='rock') ||
+                          (userMove==='scissor' && randomMove==='paper')){
+                    scores.wins += 1;
+                    alert(`You win! ${userMove} beats ${randomMove}. Wins=${scores.wins} Losses=${scores.losses} Ties=${scores.ties}`);
+                } else {
+                    scores.losses += 1;
+                    alert(`You lose! ${randomMove} beats ${userMove}. Wins=${scores.wins} Losses=${scores.losses} Ties=${scores.ties}`);
+                }
+            }
+            function resetScore(){
+                scores.ties=0,
+                scores.wins=0,
+                scores.losses=0 ;
+            }
+            
+         </script>
+    </body>
+</html>
