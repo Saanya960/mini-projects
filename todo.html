@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Todo List</title>
+        <link rel="stylesheet" href="styles/todo.css">
+    </head>
+    <body>
+        <h3>Todo list practice 1(Displayed in console)</h3>
+        <input onkeydown="enterKey(event)" type="text" placeholder="Enter a task">
+        <button onclick="arrayPush()">Add Task</button> <br> <br>
+        <h3>Todo list</h3>
+        <div class="todo-grid">
+            <div>Task</div>
+            <div>Due Date</div>
+            <div>Action</div>
+        </div>
+        <div class="todo-grid">
+            <input class="input" onkeydown="enterKey2(event)" type="text" placeholder="Enter a task">
+            <input type="date" class="date">
+            <button class="add-task-btn" onclick="addTask()">Add Task</button>
+        </div>
+        <ul id="list"></ul>
+    <script src="scripts/todo.js"></script>
+    </body>
+</html>
