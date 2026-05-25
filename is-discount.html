@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Is Discount?</title>
+    </head>
+    <body>
+        <h3>Discount check</h3>
+        <input onkeydown="if(event.key==='Enter'){isDiscount()};" type="text" placeholder="Enter your age:">
+        <button onclick="isDiscount()">Check</button> <br>
+            <p id="result"></p>
+    <script>
+       
+        function isDiscount(){  
+        const isHoliday=true;
+        let input=document.querySelector('input');
+        let age=parseInt(input.value);
+        if((age<=6 || age>=65) && !isHoliday){
+            document.querySelector('#result').innerText='You get a discount!';
+        } else{
+            document.querySelector('#result').innerText='Sorry, no discount for you.';//always be denied.
+        } }
+    </script>
+    </body>
+</html>
