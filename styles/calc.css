@@ -1,0 +1,25 @@
+.container {
+    display:flex;
+    background-color:rgba(0, 0, 0, 0.667);
+    height:600px;
+    width:400px;
+    border-radius:4px;
+    flex-wrap:wrap;
+    justify-content: space-around;
+}
+.result {
+    height:100px;
+    width:400px;
+    background-color: black;
+}
+
+.inner {
+    height:90px;
+    width:90px;
+    border-radius:50%;
+    background-color:rgba(0, 0, 0, 0.192);
+    text-align:center;
+    color:hotpink;
+    font-weight: bold;
+    
+}
