@@ -10,7 +10,8 @@
 .result {
     height:100px;
     width:400px;
-    background-color: black;
+    background-color: rgb(93, 78, 78);
+    
 }
 
 .inner {
@@ -21,5 +22,12 @@
     text-align:center;
     color:hotpink;
     font-weight: bold;
-    
+    border:none;
+    font-size:45px;
+}
+
+.result .display {
+    color:hotpink;
+    font-size:45px;
+    text-align:end;
 }

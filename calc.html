@@ -6,24 +6,24 @@
     </head> 
     <body>
       <div class="container">
-        <div class="result">ans</div>
-          <div onclick="elClicked();"class="inner">+</div>
-          <div onclick="elClicked();"class="inner">7</div>
-          <div onclick="elClicked();" class="inner">8</div>
-          <div onclick="elClicked();" class="inner">9</div>
-          <div onclick="elClicked();" class="inner">-</div>
-          <div onclick="elClicked();" class="inner">4</div>
-          <div onclick="elClicked();" class="inner">5</div>
-          <div onclick="elClicked();"class="inner">6</div>
-          <div onclick="elClicked();" class="inner">*</div>
-          <div onclick="elClicked();" class="inner">1</div>
-          <div onclick="elClicked();" class="inner">2</div>
-          <div onclick="elClicked();" class="inner">3</div>
-          <div onclick="elClicked();" class="inner">/</div>
-          <div onclick="elClicked();" class="inner">0</div>
-          <div onclick="elClicked();" class="inner">.</div>
-          <div onclick="elClicked();" class="inner">=</div>
-          <div onclick="elClicked();" class="inner">C</div>
+        <div class="result"><div class="display"></div></div>
+          <button value="+" onclick="elClicked(this.value);"class="inner">+</button>
+          <button value="7" onclick="elClicked(this.value);"class="inner">7</button>
+          <button value="8" onclick="elClicked(this.value);" class="inner">8</button>
+          <button value="9" onclick="elClicked(this.value);" class="inner">9</button>
+          <button value="-" onclick="elClicked(this.value);" class="inner">-</button>
+          <button value="4" onclick="elClicked(this.value);" class="inner">4</button>
+          <button value="5" onclick="elClicked(this.value);" class="inner">5</button>
+          <button value="6" onclick="elClicked(this.value);"class="inner">6</button>
+          <button value="*" onclick="elClicked(this.value);" class="inner">*</button>
+          <button value="1" onclick="elClicked(this.value);" class="inner">1</button>
+          <button value="2" onclick="elClicked(this.value);" class="inner">2</button>
+          <button value="3" onclick="elClicked(this.value);" class="inner">3</button>
+          <button value="/" onclick="elClicked(this.value);" class="inner">/</button>
+          <button value="0" onclick="elClicked(this.value);" class="inner">0</button>
+          <button value="." onclick="elClicked(this.value);" class="inner">.</button>
+          <button onclick="ans()" class="inner">=</button>
+          <button onclick="clearDisplay();" class="inner">C</button>
       </div>
       
     <script src="scripts/calc.js">
